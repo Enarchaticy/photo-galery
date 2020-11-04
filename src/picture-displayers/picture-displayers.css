@@ -1,0 +1,80 @@
+.comment-card {
+    margin: 10px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.comment-time {
+    margin-left: 10px;
+}
+
+.comment-input {
+    width: 75%;
+}
+
+.small-picture {
+    width: 300px;
+    height: 300px;
+    margin: 7px;
+    cursor: pointer;
+}
+
+.owned-small-picture {
+    width: 300px;
+    height: 300px;
+    margin: 4px;
+    border: 3px solid blue;
+    cursor: pointer;
+}
+
+.small-picture:hover {
+    border: 3px solid greenyellow;
+    margin: 4px;
+}
+
+.owned-small-picture:hover {
+    border: 3px solid greenyellow;
+    margin: 4px;
+}
+
+.picture-with-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+}
+
+.big-picture {
+    width: 68vw;
+    height: 68vw;
+    margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .picture-data {
+        width: 68vw;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .big-picture {
+        width: 45vw;
+        height: 45vw;
+        margin: 10px;
+    }
+    .picture-with-arrows {
+        display: flex;
+        align-items: center;
+        margin: 7px;
+        float: left;
+    }
+    .big-picture-container {
+        overflow: hidden
+    }
+    .picture-data {
+        margin-top: 15px;
+        margin-right: 40px;
+        min-height: 45vw;
+    }
+}
