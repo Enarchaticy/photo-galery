@@ -9,11 +9,7 @@ import "./frame.css";
 
 export function PictureHandlerButtons(props) {
   const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
+  
   const handleClose = () => {
     props.setModifyPicture();
     setOpen(false);
@@ -43,7 +39,7 @@ export function PictureHandlerButtons(props) {
             color="primary"
             onClick={() => {
               props.modifyPicture(props.bigPicture);
-              handleClickOpen();
+              setOpen(true);
             }}
           >
             <CreateIcon />
@@ -53,7 +49,7 @@ export function PictureHandlerButtons(props) {
       <Fab
         className="picture-handler-buttons"
         color="primary"
-        onClick={() => handleClickOpen()}
+        onClick={() => setOpen(true)}
       >
         <AddIcon />
       </Fab>

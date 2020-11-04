@@ -4,12 +4,8 @@ import "./frame.css";
 export function PictureManipulatorDialog(props) {
   const { onClose, open } = props;
 
-  const handleClose = () => {
-    onClose();
-  };
-
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog onClose={() => onClose()} open={open}>
       <DialogTitle>Fill the form</DialogTitle>
       <div className="dialog-inputs-container">
         <Input
@@ -32,7 +28,7 @@ export function PictureManipulatorDialog(props) {
           color="primary"
           onClick={() => {
             props.sendImage();
-            setTimeout(() => handleClose());
+            setTimeout(() => onClose());
           }}
         >
           Send

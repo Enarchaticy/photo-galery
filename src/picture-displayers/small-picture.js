@@ -10,7 +10,7 @@ export default function SmallPicture(props) {
         }
         src={props.picture.src}
         alt={props.picture.alt}
-        onClick={() => props.onClick(props.picture.index)}
+        onClick={() => props.onClick(props.pictureId)}
       />
     );
   }

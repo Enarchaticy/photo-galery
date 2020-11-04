@@ -75,12 +75,7 @@ export default class Galery extends React.Component {
     if (pictures.length - 1 === 0) {
       this.showPicture(null);
     }
-    pictures.splice(
-      pictures.findIndex((picture) => {
-        return picture.index === index;
-      }),
-      1
-    );
+    pictures.splice(index, 1);
     this.setState({ pictures });
   }
 
@@ -123,11 +118,12 @@ export default class Galery extends React.Component {
   }
 
   renderSmallPictures() {
-    return this.state.pictures.map((picture) => (
+    return this.state.pictures.map((picture, index) => (
       <SmallPicture
         key={picture.index}
         picture={picture}
         onClick={this.showPicture}
+        pictureId={index}
       />
     ));
   }
