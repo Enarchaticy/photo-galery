@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       userName: null,
+      isLoggedIn: false,
     };
 
     this.login = this.login.bind(this);
@@ -17,10 +18,11 @@ class App extends React.Component {
 
   login() {
     localStorage.setItem("userName", this.state.userName);
+    this.setState({ isLoggedIn: true });
   }
 
   logout() {
-    this.setState({ userName: null });
+    this.setState({ userName: null, isLoggedIn: false });
     localStorage.clear();
   }
 
@@ -32,11 +34,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <Tools
-          isLoggedIn={localStorage.getItem('userName')}
+          isLoggedIn={this.state.isLoggedIn}
           userName={this.state.userName}
           onClick={this.logout}
         ></Tools>
-        {!localStorage.getItem('userName') ? (
+        {!this.state.isLoggedIn ? (
           <Login onClick={this.login} onChange={this.handleChange}></Login>
         ) : (
           <Galery></Galery>

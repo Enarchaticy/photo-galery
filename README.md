@@ -1,3 +1,14 @@
+# Running the Application in Development Mode
+
+### 'npm install'
+
+To installing dependecies.
+
+### 'npm start'
+
+To run app in development mode, then open [http://localhost:3000](http://localhost:3000) to view in the browser.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
